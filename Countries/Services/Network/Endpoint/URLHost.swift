@@ -13,7 +13,7 @@ struct URLHost: RawRepresentable {
 
 extension URLHost {
     static var standard: Self {
-        return URLHost(rawValue: "restcountries.eu")
+        return URLHost(rawValue: "restcountries.com")
     }
     
     static var image: Self {

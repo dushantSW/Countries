@@ -51,6 +51,7 @@
 		12501B9D2709081E00074CED /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B9C2709081E00074CED /* NibLoadableView.swift */; };
 		12B6866627098BBB00B51F1B /* InformationHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12B6866527098BBB00B51F1B /* InformationHView.xib */; };
 		12B686692709C42E00B51F1B /* URLHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B686682709C42E00B51F1B /* URLHost.swift */; };
+		12B6866C2709CD4C00B51F1B /* CountryDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6866B2709CD4C00B51F1B /* CountryDetailTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		12501B9C2709081E00074CED /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		12B6866527098BBB00B51F1B /* InformationHView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationHView.xib; sourceTree = "<group>"; };
 		12B686682709C42E00B51F1B /* URLHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHost.swift; sourceTree = "<group>"; };
+		12B6866B2709CD4C00B51F1B /* CountryDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 		12501B852707820500074CED /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				12B6866A2709CD3600B51F1B /* Detail */,
 				12501B862707821000074CED /* List */,
 			);
 			path = Countries;
@@ -421,6 +424,14 @@
 				12B6866527098BBB00B51F1B /* InformationHView.xib */,
 			);
 			path = InformationHView;
+			sourceTree = "<group>";
+		};
+		12B6866A2709CD3600B51F1B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				12B6866B2709CD4C00B51F1B /* CountryDetailTests.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +612,7 @@
 				12501B6C27075DCC00074CED /* CountryServiceTests.swift in Sources */,
 				12501B6327071CDC00074CED /* NetworkClientTests.swift in Sources */,
 				12501B8C2707839F00074CED /* MockCountryServiceProvider.swift in Sources */,
+				12B6866C2709CD4C00B51F1B /* CountryDetailTests.swift in Sources */,
 				12501B68270725FF00074CED /* Result+Utils.swift in Sources */,
 				12501B8A2707827900074CED /* XCTest+JSON.swift in Sources */,
 				12501B882707822500074CED /* CountriesViewModelTests.swift in Sources */,
