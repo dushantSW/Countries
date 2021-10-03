@@ -21,16 +21,6 @@ class CountriesViewModel: ObservableObject {
     
     private(set) var currentSelectedCountry: Country? = nil
     
-    /// Computes the indexed titles available from displaying countries
-    public var indexedTitles: [Character] {
-        return Array(Set(displayCountries.compactMap { $0.name.first }))
-    }
-    
-    /// Returns if the user is doing search
-    public var isSearching: Bool {
-        return !searchByCountryName.isEmpty
-    }
-    
     // MARK: - Private properties
     private let service: CountryServiceProvider
     
