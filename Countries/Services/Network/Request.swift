@@ -47,7 +47,7 @@ struct Request {
     /// stored in this request
     var urlRequest: URLRequest {
         var urlRequest = URLRequest(
-            url: endpoint.url,
+            url: endpoint.url(withHost: .standard),
             cachePolicy: .returnCacheDataElseLoad,
             timeoutInterval: requestTimeoutInterval
         )

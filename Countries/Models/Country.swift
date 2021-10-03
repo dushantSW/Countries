@@ -36,6 +36,6 @@ struct Country: Codable {
     let languages: [Language]
     
     func imageURL(of size: ImageSize = .medium) -> URL {
-        return Endpoint.getImage(of: self, for: size).imageUrl
+        return Endpoint.getImage(of: self, for: size).url(withHost: .image)
     }
 }

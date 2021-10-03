@@ -17,9 +17,9 @@ class MockNetworkClientProvider: NetworkClientProvider {
     }
     
     func performRequest<Value>(_ request: Request) -> AnyPublisher<Value, Error> where Value : Decodable {
-        if let response = customResponses[request.endpoint.url.path] as? Value {
+        if let response = customResponses[request.endpoint.url().path] as? Value {
             return .just(response)
-        } else if let networkError = customResponses[request.endpoint.url.path] as? RequestError {
+        } else if let networkError = customResponses[request.endpoint.url().path] as? RequestError {
             return .fail(networkError)
         } else {
             return .fail(RequestError.invalidRequest)

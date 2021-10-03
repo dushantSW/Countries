@@ -50,6 +50,7 @@
 		12501B9B2709071200074CED /* InformationHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B9A2709071200074CED /* InformationHView.swift */; };
 		12501B9D2709081E00074CED /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B9C2709081E00074CED /* NibLoadableView.swift */; };
 		12B6866627098BBB00B51F1B /* InformationHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12B6866527098BBB00B51F1B /* InformationHView.xib */; };
+		12B686692709C42E00B51F1B /* URLHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B686682709C42E00B51F1B /* URLHost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		12501B9A2709071200074CED /* InformationHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationHView.swift; sourceTree = "<group>"; };
 		12501B9C2709081E00074CED /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		12B6866527098BBB00B51F1B /* InformationHView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationHView.xib; sourceTree = "<group>"; };
+		12B686682709C42E00B51F1B /* URLHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			children = (
 				12501B3A2706050800074CED /* Endpoint.swift */,
 				12501B3C270607D200074CED /* Endpoint+CountryService.swift */,
+				12B686682709C42E00B51F1B /* URLHost.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				12501B472706102900074CED /* NetworkClient.swift in Sources */,
 				12501B80270774C400074CED /* Utilities.swift in Sources */,
 				12501B75270766E400074CED /* Language.swift in Sources */,
+				12B686692709C42E00B51F1B /* URLHost.swift in Sources */,
 				12501B49270611A300074CED /* CountryService.swift in Sources */,
 				12501B6A27075C1000074CED /* Scheduler.swift in Sources */,
 				12501B7C270773F300074CED /* LoadingState.swift in Sources */,

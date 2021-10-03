@@ -33,7 +33,7 @@ class NetworkClientTests: XCTestCase {
         // GIVEN
         let expectation = expectation(description: "Excepeting a successfull response from test")
         let endpoint: Endpoint = .all
-        let response = HTTPURLResponse(url: endpoint.url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let response = HTTPURLResponse(url: endpoint.url(), statusCode: 200, httpVersion: nil, headerFields: nil)
         MockURLProtocol.requestHandler = (Data(json.utf8), response)
         
         // WHEN
@@ -57,7 +57,7 @@ class NetworkClientTests: XCTestCase {
         // GIVEN
         let expectation = expectation(description: "Excepeting a 400 response from test")
         let endpoint = Endpoint.all
-        let response = HTTPURLResponse(url: endpoint.url, statusCode: 404, httpVersion: nil, headerFields: nil)
+        let response = HTTPURLResponse(url: endpoint.url(), statusCode: 404, httpVersion: nil, headerFields: nil)
         MockURLProtocol.requestHandler = (Data(errorJson.utf8), response)
         
         // WHEN
@@ -79,7 +79,7 @@ class NetworkClientTests: XCTestCase {
         // GIVEN
         let expectation = expectation(description: "Excepeting a decoding issue from test")
         let endpoint = Endpoint.all
-        let response = HTTPURLResponse(url: endpoint.url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let response = HTTPURLResponse(url: endpoint.url(), statusCode: 200, httpVersion: nil, headerFields: nil)
         MockURLProtocol.requestHandler = (Data(errorJson.utf8), response)
         
         // WHEN

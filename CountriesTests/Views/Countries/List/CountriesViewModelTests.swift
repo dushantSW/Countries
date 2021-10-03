@@ -50,7 +50,7 @@ class CountriesViewModelTests: XCTestCase {
         XCTAssertTrue(loadingStates.contains(.loading))
         XCTAssertTrue(loadingStates.contains(.success))
         XCTAssertFalse(testingViewModel.displayCountries.isEmpty)
-        XCTAssertEqual(testingViewModel.displayCountries.count, 248)
+        XCTAssertEqual(testingViewModel.displayCountries.count, 250)
     }
     
     func testThatCountriesLoadingFailCalledFailed() {
@@ -85,7 +85,7 @@ class CountriesViewModelTests: XCTestCase {
         testingViewModel.loadCountries()
         
         // Should have 248 countries
-        XCTAssertEqual(testingViewModel.displayCountries.count, 248)
+        XCTAssertEqual(testingViewModel.displayCountries.count, 250)
         
         // Search for Afghanistan, should have 1 country
         testingViewModel.searchByCountryName = "Afghanistan"
@@ -97,6 +97,6 @@ class CountriesViewModelTests: XCTestCase {
         
         // Reset everything
         testingViewModel.searchByCountryName = ""
-        XCTAssertEqual(testingViewModel.displayCountries.count, 248)
+        XCTAssertEqual(testingViewModel.displayCountries.count, 250)
     }
 }

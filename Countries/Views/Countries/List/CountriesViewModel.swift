@@ -64,7 +64,6 @@ class CountriesViewModel: ObservableObject {
     private func configureSearchTextPublishing() {
         self.$searchByCountryName
             .compactMap { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .print()
             .map { input in
                 if input.isEmpty { return self.getDisplayCountries(from: self.countries) }
                 return self.countries.filter { $0.alpha2Code == input || $0.name.lowercased().contains(input.lowercased()) }
