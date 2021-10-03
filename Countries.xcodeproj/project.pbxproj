@@ -46,7 +46,10 @@
 		12501B8F2707A7AF00074CED /* CountryFlagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B8E2707A7AF00074CED /* CountryFlagViewCell.swift */; };
 		12501B912707A82E00074CED /* CALayer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B902707A82E00074CED /* CALayer+Utils.swift */; };
 		12501B952707AC4E00074CED /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B942707AC4E00074CED /* ReusableView.swift */; };
-		12501B972707AC7D00074CED /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B962707AC7D00074CED /* UICollectionView+Utils.swift */; };
+		12501B972707AC7D00074CED /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B962707AC7D00074CED /* UITableView+Utils.swift */; };
+		12501B9B2709071200074CED /* InformationHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B9A2709071200074CED /* InformationHView.swift */; };
+		12501B9D2709081E00074CED /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12501B9C2709081E00074CED /* NibLoadableView.swift */; };
+		12B6866627098BBB00B51F1B /* InformationHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12B6866527098BBB00B51F1B /* InformationHView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +112,10 @@
 		12501B8E2707A7AF00074CED /* CountryFlagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagViewCell.swift; sourceTree = "<group>"; };
 		12501B902707A82E00074CED /* CALayer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Utils.swift"; sourceTree = "<group>"; };
 		12501B942707AC4E00074CED /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		12501B962707AC7D00074CED /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
+		12501B962707AC7D00074CED /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		12501B9A2709071200074CED /* InformationHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationHView.swift; sourceTree = "<group>"; };
+		12501B9C2709081E00074CED /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		12B6866527098BBB00B51F1B /* InformationHView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationHView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 				12501B7D270774AD00074CED /* AccessibilityConstants.swift */,
 				12501B7F270774C400074CED /* Utilities.swift */,
 				12501B942707AC4E00074CED /* ReusableView.swift */,
+				12501B9C2709081E00074CED /* NibLoadableView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -247,6 +254,7 @@
 		12501B4F27061B5C00074CED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				12501B982709069200074CED /* CustomViews */,
 				12501B5227061B7800074CED /* Countries */,
 				12501B7A270773EA00074CED /* LoadingState */,
 				12501B09270604B200074CED /* Main.storyboard */,
@@ -269,7 +277,7 @@
 				12501B5627062B7A00074CED /* Collection+Utils.swift */,
 				12501B5E27071BE500074CED /* Published+Utils.swift */,
 				12501B902707A82E00074CED /* CALayer+Utils.swift */,
-				12501B962707AC7D00074CED /* UICollectionView+Utils.swift */,
+				12501B962707AC7D00074CED /* UITableView+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +403,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		12501B982709069200074CED /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				12501B992709069B00074CED /* InformationHView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		12501B992709069B00074CED /* InformationHView */ = {
+			isa = PBXGroup;
+			children = (
+				12501B9A2709071200074CED /* InformationHView.swift */,
+				12B6866527098BBB00B51F1B /* InformationHView.xib */,
+			);
+			path = InformationHView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +533,7 @@
 			files = (
 				12501B10270604B400074CED /* LaunchScreen.storyboard in Resources */,
 				12501B0D270604B400074CED /* Assets.xcassets in Resources */,
+				12B6866627098BBB00B51F1B /* InformationHView.xib in Resources */,
 				12501B0B270604B200074CED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12501B772707670200074CED /* Currency.swift in Sources */,
-				12501B972707AC7D00074CED /* UICollectionView+Utils.swift in Sources */,
+				12501B972707AC7D00074CED /* UITableView+Utils.swift in Sources */,
 				12501B8F2707A7AF00074CED /* CountryFlagViewCell.swift in Sources */,
 				12501B4527060D1500074CED /* RequestError.swift in Sources */,
 				12501B952707AC4E00074CED /* ReusableView.swift in Sources */,
@@ -544,7 +570,9 @@
 				12501B402706084F00074CED /* Request.swift in Sources */,
 				12501B5B27062DDC00074CED /* CountryDetailViewController.swift in Sources */,
 				12501B08270604B200074CED /* CountriesViewController.swift in Sources */,
+				12501B9B2709071200074CED /* InformationHView.swift in Sources */,
 				12501B5127061B6D00074CED /* CountriesViewModel.swift in Sources */,
+				12501B9D2709081E00074CED /* NibLoadableView.swift in Sources */,
 				12501B04270604B200074CED /* AppDelegate.swift in Sources */,
 				12501B472706102900074CED /* NetworkClient.swift in Sources */,
 				12501B80270774C400074CED /* Utilities.swift in Sources */,

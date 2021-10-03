@@ -13,9 +13,23 @@ class CountriesViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     // MARK: - Public properties
+    public let detailSegueIdentifier = "countryDetail"
+    
     @Published private(set) var loadingState: LoadingState = .idle
     @Published private(set) var displayCountries: [Country] = []
-    @Published var searchByCountryName: String = ""
+    @Published public var searchByCountryName: String = ""
+    
+    private(set) var currentSelectedCountry: Country? = nil
+    
+    /// Computes the indexed titles available from displaying countries
+    public var indexedTitles: [Character] {
+        return Array(Set(displayCountries.compactMap { $0.name.first }))
+    }
+    
+    /// Returns if the user is doing search
+    public var isSearching: Bool {
+        return !searchByCountryName.isEmpty
+    }
     
     // MARK: - Private properties
     private let service: CountryServiceProvider
@@ -32,7 +46,7 @@ class CountriesViewModel: ObservableObject {
             switch result {
             case .success(let countries):
                 self.countries = countries
-                self.displayCountries = countries
+                self.displayCountries = self.getDisplayCountries(from: countries)
                 self.loadingState = .success
             case .failure(let error):
                 self.loadingState = .failed(error: error as? LocalizedError ?? RequestError.unknownError)
@@ -41,17 +55,25 @@ class CountriesViewModel: ObservableObject {
         self.loadingState = .loading
     }
     
+    public func didSelectCountry(at row: Int) {
+        guard let country = displayCountries[safe: row] else { return }
+        currentSelectedCountry = country
+    }
+    
     // MARK: - Helper methods
-    func configureSearchTextPublishing() {
+    private func configureSearchTextPublishing() {
         self.$searchByCountryName
-            .removeDuplicates()
+            .compactMap { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .print()
             .map { input in
-                if input.isEmpty { return self.countries }
-                return self.countries.filter {
-                    $0.alpha2Code == input || $0.name.lowercased().contains(input.lowercased())
-                }
+                if input.isEmpty { return self.getDisplayCountries(from: self.countries) }
+                return self.countries.filter { $0.alpha2Code == input || $0.name.lowercased().contains(input.lowercased()) }
             }
             .assign(to: \.displayCountries, on: self)
             .store(in: &cancellables)
+    }
+    
+    private func getDisplayCountries(from countries: [Country]) -> [Country] {
+        return countries.sorted(by: { $0.name < $1.name })
     }
 }

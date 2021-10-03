@@ -9,7 +9,8 @@ import Foundation
 
 extension Endpoint {
     static var all: Endpoint {
-        let fields = ["name", "alpha2Code", "capital", "region", "population", "area", "nativeName", "currencies", "languages"]
+        let fields = ["name", "alpha2Code", "alpha3Code", "capital", "region", "subregion",
+                      "population", "area", "nativeName", "currencies", "languages"]
         return Endpoint(path: "/v2/all", queryParameters: [
             URLQueryItem(name: "fields", value: fields.joined(separator: ","))
         ])
